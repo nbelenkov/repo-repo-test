@@ -1,0 +1,17 @@
+name: Bump Dep With Proper Env Setup
+on:
+  push:
+    branches-ignore:
+      - "main"
+env:
+  NODE_ENV: production
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a Secret (Example)
+        run: echo "The secret is $ENVIORMENT_SECRET"
+        env:
+          TEST_SECRET: ${{ secrets.ENVIORMENT_SECRET }}
