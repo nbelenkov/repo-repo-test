@@ -3,13 +3,11 @@ on:
   push:
     branches-ignore:
       - "main"
-env:
-  NODE_ENV: production
-
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: Print a Secret (Example)
         run: echo "The secret is $ENVIORMENT_SECRET"
