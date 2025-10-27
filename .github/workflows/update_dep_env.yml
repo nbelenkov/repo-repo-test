@@ -1,0 +1,14 @@
+name: Bump Dep
+on:
+  push:
+    branches-ignore:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print a Secret (Example)
+        run: echo "The secret is $ENVIORMENT_SECRET"
+        env:
+          TEST_SECRET: ${{ secrets.ENVIORMENT_SECRET }}
